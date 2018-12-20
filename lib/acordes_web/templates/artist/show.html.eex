@@ -1,13 +1,16 @@
 <h1><%= @artist.name %></h1>
 
 <article class="tab-list">
+<%= for x <- 1..5 do %>
 <%= for tab <- @tabs do %>
   <%= link tab.title, to: "#{@artist.slug}/#{tab.slug}" %>
+<% end %>
 <% end %>
 </article>
 
 <hr />
 
-<strong>Bio:</strong>
+<h2>Bio:</h2>
+<source><%= @artist.bio_source %></source><br />
+
 <%= @artist.bio %>
-<source><%= @artist.bio_source %></source>

@@ -17,7 +17,7 @@ body {
     'nav    main  '
     'footer footer';
   grid-template-rows: 8rem 1fr 4rem;
-  grid-template-columns: 24rem 1fr;
+  grid-template-columns: 32rem 1fr;
 }
 
 @media screen and (max-width: $small-break) {

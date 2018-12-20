@@ -13,7 +13,12 @@
 <body>
   <header class="site-header">
     <section class="brand">Acordes <span class="totales">TOTALES</span></section>
+    <form class="search-form">
+      <input class="searchbox"></input>
+      <button class="search-button">Go</button>
+    </form>
   </header>
+
 
   <nav class="site-nav">
     <a class="nav-link" href="/">Home</a>
