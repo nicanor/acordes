@@ -19,7 +19,10 @@ defmodule Acordes.Hub do
   Gets a single artist.
   Raises `Ecto.NoResultsError` if the Artist does not exist.
   """
-  def get_artist!(id), do: Repo.get!(Artist, id)
+  def get_artist!(slug), do: Repo.get_by!(Artist, slug: slug)
+
+
+  def get_artist_by_slug!(slug), do: Repo.get_by!(Artist, slug: slug)
 
   @doc """
   Creates an artist.
@@ -43,10 +46,12 @@ defmodule Acordes.Hub do
   Gets a single tab.
 
   Raises `Ecto.NoResultsError` if the Tab does not exist.
-
-  ## Examples
   """
   def get_tab!(id), do: Repo.get!(Tab, id)
+
+  def get_tab_by_artist_and_slug!(artist, slug) do
+     Repo.get_by!(Tab, artist_id: artist.id, slug: slug)
+  end
 
   @doc """
   Creates a tab.

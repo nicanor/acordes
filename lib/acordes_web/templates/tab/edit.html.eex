@@ -1,5 +1,0 @@
-<h1>Edit Tab</h1>
-
-<%= render "form.html", Map.put(assigns, :action, Routes.tab_path(@conn, :update, @tab)) %>
-
-<span><%= link "Back", to: Routes.tab_path(@conn, :index) %></span>

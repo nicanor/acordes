@@ -6,7 +6,7 @@
 <%= for artist <- @artists do %>
     <tr>
       <td>
-        <%= link  artist.name, to: Routes.artist_path(@conn, :show, artist) %>
+        <%= link artist.name, to: Routes.artist_path(@conn, :show, artist) %>
       </td>
     </tr>
 <% end %>

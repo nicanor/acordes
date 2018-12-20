@@ -9,8 +9,9 @@ defmodule AcordesWeb.TabController do
     render(conn, "index.html", tabs: tabs)
   end
 
-  def show(conn, %{"id" => id}) do
-    tab = Hub.get_tab!(id)
-    render(conn, "show.html", tab: tab)
+  def show(conn, %{"artist_id" => artist_slug, "id" => tab_slug}) do
+    artist = Hub.get_artist_by_slug!(artist_slug)
+    tab = Hub.get_tab_by_artist_and_slug!(artist, tab_slug)
+    render(conn, "show.html", artist: artist, tab: tab)
   end
 end

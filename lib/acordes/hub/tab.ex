@@ -2,7 +2,6 @@ defmodule Acordes.Hub.Tab do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "tabs" do
     field :title, :string
     field :slug, :string
@@ -17,7 +16,11 @@ defmodule Acordes.Hub.Tab do
   @doc false
   def changeset(tab, attrs) do
     tab
-    |> cast(attrs, [:title, :slug, :content, :source])
+    |> cast(attrs, [:title, :slug, :content, :source, :artist_id])
     |> validate_required([:title, :slug, :content, :source])
   end
+end
+
+defimpl Phoenix.Param, for: Acordes.Hub.Tab do
+  def to_param(%{slug: slug}), do: slug
 end

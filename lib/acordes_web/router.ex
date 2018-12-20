@@ -12,11 +12,11 @@ defmodule AcordesWeb.Router do
   scope "/", AcordesWeb do
     pipe_through :browser
 
-    resources "/artistas", ArtistController, only: [:index, :show] do
-      # get "/:slug", TabController, :show
-    end
+    resources "/tabs", TabController, only: [:index]
 
-    resources "/tabs", TabController
+    resources "/artistas", ArtistController, only: [:index, :show] do
+      get "/:id", TabController, :show
+    end
 
     get "/", HomeController, :index
   end

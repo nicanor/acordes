@@ -18,3 +18,7 @@ defmodule Acordes.Hub.Artist do
     |> validate_required([:name, :slug, :bio, :bio_source])
   end
 end
+
+defimpl Phoenix.Param, for: Acordes.Hub.Artist do
+  def to_param(%{slug: slug}), do: slug
+end
