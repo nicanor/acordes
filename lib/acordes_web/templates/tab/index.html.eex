@@ -1,0 +1,32 @@
+<h1>Listing Tabs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Slug</th>
+      <th>Content</th>
+      <th>Source</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for tab <- @tabs do %>
+    <tr>
+      <td><%= tab.title %></td>
+      <td><%= tab.slug %></td>
+      <td><%= tab.content %></td>
+      <td><%= tab.source %></td>
+
+      <td>
+        <%= link "Show", to: Routes.tab_path(@conn, :show, tab) %>
+        <%= link "Edit", to: Routes.tab_path(@conn, :edit, tab) %>
+        <%= link "Delete", to: Routes.tab_path(@conn, :delete, tab), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Tab", to: Routes.tab_path(@conn, :new) %></span>

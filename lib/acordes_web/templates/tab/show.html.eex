@@ -1,0 +1,28 @@
+<h1>Show Tab</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @tab.title %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @tab.slug %>
+  </li>
+
+  <li>
+    <strong>Content:</strong>
+    <%= @tab.content %>
+  </li>
+
+  <li>
+    <strong>Source:</strong>
+    <%= @tab.source %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.tab_path(@conn, :edit, @tab) %></span>
+<span><%= link "Back", to: Routes.tab_path(@conn, :index) %></span>

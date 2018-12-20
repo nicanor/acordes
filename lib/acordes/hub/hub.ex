@@ -29,4 +29,40 @@ defmodule Acordes.Hub do
     |> Artist.changeset(attrs)
     |> Repo.insert()
   end
+
+  alias Acordes.Hub.Tab
+
+  @doc """
+  Returns the list of tabs.
+  """
+  def list_tabs do
+    Repo.all(Tab)
+  end
+
+  @doc """
+  Gets a single tab.
+
+  Raises `Ecto.NoResultsError` if the Tab does not exist.
+
+  ## Examples
+  """
+  def get_tab!(id), do: Repo.get!(Tab, id)
+
+  @doc """
+  Creates a tab.
+
+  ## Examples
+
+      iex> create_tab(%{field: value})
+      {:ok, %Tab{}}
+
+      iex> create_tab(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_tab(attrs \\ %{}) do
+    %Tab{}
+    |> Tab.changeset(attrs)
+    |> Repo.insert()
+  end
 end
