@@ -11,6 +11,7 @@ defmodule AcordesWeb.ArtistController do
 
   def show(conn, %{"id" => id}) do
     artist = Hub.get_artist!(id)
-    render(conn, "show.html", artist: artist)
+    tabs = Hub.list_tabs(artist)
+    render(conn, "show.html", artist: artist, tabs: tabs)
   end
 end

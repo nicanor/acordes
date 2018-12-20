@@ -9,6 +9,8 @@ body {
 }
 
 body {
+  background-color: $base-color;
+
   display: grid;
   grid-template-areas:
     'header header'
@@ -16,18 +18,16 @@ body {
     'footer footer';
   grid-template-rows: 8rem 1fr 4rem;
   grid-template-columns: 24rem 1fr;
-
-  background-color: $base-color;
 }
 
 @media screen and (max-width: $small-break) {
   body {
     grid-template-areas:
       'header'
-      'nav'
       'main'
+      'nav'
       'footer';
-    grid-template-rows: 4rem 1fr 1fr 4rem;
+    grid-template-rows: 8rem 1fr 1fr 4rem;
     grid-template-columns: 1fr;
   }
 }
