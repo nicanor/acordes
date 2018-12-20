@@ -1,8 +1,4 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>A productive web framework that<br/>does not compromise speed and maintainability.</p>
-</section>
-
-<section class="row">
-  Sarasa
+  <h1><%= gettext "Welcome to %{name}!", name: "Acordes Totales" %></h1>
+  <p>Encuentra los mejores acordes y tablaturas para guitarra, bajo, piano, armónica y otros instrumentos</p>
 </section>
