@@ -1,0 +1,18 @@
+<h1><%= @artist.name %></h1>
+
+<ul>
+  <li>
+    <strong>Slug:</strong>
+    <%= @artist.slug %>
+  </li>
+
+  <li>
+    <strong>Bio:</strong>
+    <%= @artist.bio %>
+  </li>
+
+  <li>
+    <strong>Bio source:</strong>
+    <%= @artist.bio_source %>
+  </li>
+</ul>

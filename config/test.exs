@@ -11,8 +11,8 @@ config :logger, level: :warn
 
 # Configure your database
 config :acordes, Acordes.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "usuario",
+  password: "password",
   database: "acordes_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

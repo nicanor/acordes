@@ -9,18 +9,13 @@ defmodule AcordesWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", AcordesWeb do
     pipe_through :browser
 
+    resources "/artistas", ArtistController, only: [:index, :show] do
+      # get "/:slug", TabController, :show
+    end
+
     get "/", PageController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", AcordesWeb do
-  #   pipe_through :api
-  # end
 end
