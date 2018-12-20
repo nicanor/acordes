@@ -1,0 +1,22 @@
+// Alert
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.alert {
+  position: relative;
+  padding: 1rem;
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+  }
+
+  &.alert-error {
+    background-color: $sunflower;
+  }
+
+  &.alert-info {
+    background-color: $river;
+  }
+}

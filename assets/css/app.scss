@@ -1,0 +1,31 @@
+/*
+  This file is for your main application css.
+  Do not add any css directly, but instead import a scss file.
+*/
+
+// Base
+@import "./base/_Normalize.scss";
+@import "./base/_Color.scss";
+@import "./base/_Base.scss";
+@import "./base/_Spacing.scss";
+@import "./base/_Typography.scss";
+
+// Components
+@import "./component/_Alert.scss";
+@import "./component/_Button.scss";
+@import "./component/_Divider.scss";
+@import "./component/_Form.scss";
+@import "./component/_Table.scss";
+@import "./component/_Image.scss";
+
+// Layouts
+@import "./layout/_Admin.scss";
+@import "./layout/_SiteHeader.scss";
+@import "./layout/_SiteNav.scss";
+@import "./layout/_SiteMain.scss";
+@import "./layout/_SiteFooter.scss";
+
+// Pages
+@import "./pages/_General.scss";
+@import "./pages/_SearchBox.scss";
+@import "./pages/_Grid.scss";

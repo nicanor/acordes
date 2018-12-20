@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CrazyWeb">
+  <meta name="author" content="Nicanor Perera">
+
+  <title>Acordes Totales</title>
+  <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>">
+</head>
+<body>
+  <header class="site-header">
+    <section class="brand">Acordes Totales</section>
+  </header>
+
+  <nav class="site-nav">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/admin/assets">Assets</a>
+    <a class="nav-link" href="/admin/users">Users</a>
+    <a class="nav-link" href="/system/accounts">Accounts</a>
+  </nav>
+
+  <main class="site-main">
+    <%= if get_flash(@conn, :info) do %>
+      <p class="alert alert-info closable-js" role="alert">
+        <%= get_flash(@conn, :info) %>
+        <span class="close close-js">&times;</span>
+      </p>
+    <% end %>
+
+    <%= if get_flash(@conn, :error) do %>
+      <p class="alert alert-error closable-js" role="alert">
+        <%= get_flash(@conn, :error) %>
+        <span class="close close-js">&times;</span>
+      </p>
+    <% end %>
+
+
+    <%= render @view_module, @view_template, assigns %>
+  </main>
+
+  <footer class="site-footer">
+    <a class="nav-link" href="/docs">Docs</a>
+  </footer>
+
+  <script type="text/javascript" src="<%= Routes.static_url(@conn, "/js/app.js") %>"></script>
+</body>
+</html>

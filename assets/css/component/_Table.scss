@@ -1,0 +1,74 @@
+// Table
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+td,
+th {
+  border-bottom: 0.1rem solid $line-color;
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  .table {
+    border-spacing: 0;
+    display: flex;
+    width: 100%;
+
+    thead {
+      border-right: solid 0.1rem $line-color;
+
+      td,
+      th {
+        padding-left: 0;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 1.2rem;
+        }
+      }
+    }
+
+    tbody {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+
+      tr {
+        border-right: solid 0.1rem $line-color;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+
+    td,
+    th {
+      display: block;
+
+      &:first-child {
+        padding-left: 1.2rem;
+      }
+
+      &:last-child {
+        padding-right: 1.2rem;
+      }
+    }
+  }
+}

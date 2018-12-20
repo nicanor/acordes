@@ -1,0 +1,23 @@
+.page-content {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.asset-page {
+  display: flex;
+  justify-content: flex-start;
+}
+.asset-page > * {
+  flex: 1 100%;
+  margin: 1rem;
+}
+
+.asset-info {
+  background-color: #fff;
+  padding: 2rem;
+}
