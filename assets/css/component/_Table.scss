@@ -21,7 +21,7 @@ th {
   }
 }
 
-@media screen and (max-width: 40rem) {
+@media screen and (max-width: $small-break) {
   .table {
     border-spacing: 0;
     display: flex;

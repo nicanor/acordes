@@ -12,14 +12,21 @@
 </head>
 <body>
   <header class="site-header">
-    <section class="brand">Acordes Totales</section>
+    <section class="brand">Acordes <span class="totales">TOTALES</span></section>
   </header>
 
   <nav class="site-nav">
     <a class="nav-link" href="/">Home</a>
+
+    <header class="header">Artistas populares</header>
     <a class="nav-link" href="/admin/assets">Assets</a>
     <a class="nav-link" href="/admin/users">Users</a>
     <a class="nav-link" href="/system/accounts">Accounts</a>
+
+    <header class="header">Tablaturas populares</header>
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/">Home</a>
   </nav>
 
   <main class="site-main">

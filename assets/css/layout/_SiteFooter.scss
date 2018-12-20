@@ -1,6 +1,4 @@
 .site-footer {
-  background-color: $brand-color;
-  color: white;
   padding: 2rem;
 
   display: flex;
@@ -8,6 +6,6 @@
   align-items: center;
 
   a {
-    color: white;
+    color: $brand-color;
   }
 }
