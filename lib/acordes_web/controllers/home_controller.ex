@@ -1,4 +1,4 @@
-defmodule AcordesWeb.PageController do
+defmodule AcordesWeb.HomeController do
   use AcordesWeb, :controller
 
   def index(conn, _params) do

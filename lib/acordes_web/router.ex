@@ -16,6 +16,6 @@ defmodule AcordesWeb.Router do
       # get "/:slug", TabController, :show
     end
 
-    get "/", PageController, :index
+    get "/", HomeController, :index
   end
 end

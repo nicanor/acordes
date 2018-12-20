@@ -4,11 +4,7 @@ defmodule Acordes.HubTest do
   alias Acordes.Hub
 
   describe "artists" do
-    alias Acordes.Hub.Artist
-
     @valid_attrs %{bio: "some bio", bio_source: "some bio_source", name: "some name", slug: "some slug"}
-    @update_attrs %{bio: "some updated bio", bio_source: "some updated bio_source", name: "some updated name", slug: "some updated slug"}
-    @invalid_attrs %{bio: nil, bio_source: nil, name: nil, slug: nil}
 
     def artist_fixture(attrs \\ %{}) do
       {:ok, artist} =
