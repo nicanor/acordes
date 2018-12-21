@@ -16,8 +16,8 @@ defmodule Acordes.Hub.Tab do
   @doc false
   def changeset(tab, attrs) do
     tab
-    |> cast(attrs, [:title, :slug, :content, :source, :artist_id])
-    |> validate_required([:title, :slug, :content, :source])
+    |> cast(attrs, [:title, :slug, :content, :artist_id])
+    |> validate_required([:title, :slug, :content, :artist_id])
   end
 end
 

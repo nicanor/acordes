@@ -54,6 +54,10 @@ defmodule Acordes.Hub do
      Repo.get_by!(Tab, artist_id: artist.id, slug: slug)
   end
 
+  def get_tab(artist_id, slug) do
+     Repo.get_by(Tab, artist_id: artist_id, slug: slug)
+  end
+
   @doc """
   Creates a tab.
 
