@@ -29,7 +29,8 @@
   flex-flow: column wrap;
 
   a {
-    padding: 1rem 0rem;
+    margin-left: -1rem;
+    padding: 1rem;
 
     &:hover {
       background-color: rgba(200, 200, 200, 0.2);
