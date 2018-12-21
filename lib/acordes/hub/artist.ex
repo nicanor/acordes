@@ -15,7 +15,7 @@ defmodule Acordes.Hub.Artist do
   def changeset(artist, attrs) do
     artist
     |> cast(attrs, [:name, :slug, :bio, :bio_source])
-    |> validate_required([:name, :slug, :bio, :bio_source])
+    |> validate_required([:name, :slug])
   end
 end
 

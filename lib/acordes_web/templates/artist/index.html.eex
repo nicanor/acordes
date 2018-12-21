@@ -1,9 +1,7 @@
 <h1>Artistas Populares</h1>
 
 <article class="artist-list">
-<%= for x <- 1..20 do %>
 <%= for artist <- @artists do %>
   <%= link artist.name, to: Routes.artist_path(@conn, :show, artist) %>
-<% end %>
 <% end %>
 </article>
