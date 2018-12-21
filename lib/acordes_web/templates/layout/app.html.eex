@@ -14,11 +14,17 @@
   <header class="site-header">
     <section class="brand">Acordes <span class="totales">TOTALES</span></section>
     <form class="search-form">
-      <input class="searchbox"></input>
+       <input id="searchbox" class="searchbox awesomplete" />
+
+       <script>
+       var input = document.getElementById("searchbox");
+       var awesomplete = new Awesomplete(input);
+       awesomplete.list = ["Ada", "Java", "JavaScript", "Brainfuck", "LOLCODE", "Node.js", "Ruby on Rails"];
+       </script>
+
       <button class="search-button">Go</button>
     </form>
   </header>
-
 
   <nav class="site-nav">
     <a class="nav-link" href="/">Home</a>
