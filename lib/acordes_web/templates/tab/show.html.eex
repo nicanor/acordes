@@ -3,19 +3,4 @@
   <small><%= link @artist.name, to: Routes.artist_path(@conn, :show, @artist), class: "artist-name" %></small>
 </h1>
 
-
-<ul>
-  <li>
-    <strong>Slug:</strong>
-    <%= @tab.slug %>
-  </li>
-
-  <li>
-    <strong>Source:</strong>
-    <%= @tab.source %>
-  </li>
-</ul>
-
-<section class="tab-content">
-<pre><%= @tab.content %></pre>
-</section>
+<pre class="tab-content"><%= @tab.content %></pre>
