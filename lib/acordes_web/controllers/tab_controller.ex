@@ -2,12 +2,6 @@ defmodule AcordesWeb.TabController do
   use AcordesWeb, :controller
 
   alias Acordes.Hub
-  alias Acordes.Hub.Tab
-
-  def index(conn, _params) do
-    tabs = Hub.list_tabs()
-    render(conn, "index.html", tabs: tabs)
-  end
 
   def show(conn, %{"artist_id" => artist_slug, "id" => tab_slug}) do
     artist = Hub.get_artist!(artist_slug)

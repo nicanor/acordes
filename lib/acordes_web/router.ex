@@ -12,8 +12,6 @@ defmodule AcordesWeb.Router do
   scope "/", AcordesWeb do
     pipe_through :browser
 
-    resources "/tabs", TabController, only: [:index]
-
     resources "/artistas", ArtistController, only: [:index, :show] do
       get "/:id", TabController, :show
     end

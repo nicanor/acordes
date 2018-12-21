@@ -22,14 +22,18 @@ defmodule Acordes.HubTest do
 
     test "get_artist!/1 returns the artist with given id" do
       artist = artist_fixture()
-      assert Hub.get_artist!(artist.id) == artist
+      assert Hub.get_artist!(artist.slug) == artist
     end
   end
 
   describe "tabs" do
-    @valid_attrs %{content: "some content", slug: "some slug", source: "some source", title: "some title"}
+    @valid_attrs %{content: "some content", slug: "some slug", source: "some source", title: "some title", artist_id: nil}
 
-    def tab_fixture(attrs \\ %{}) do
+    def tab_fixture do
+      artist = artist_fixture()
+
+      attrs = %{@valid_attrs | artist_id: artist.id}
+
       {:ok, tab} =
         attrs
         |> Enum.into(@valid_attrs)
@@ -45,7 +49,7 @@ defmodule Acordes.HubTest do
 
     test "get_tab!/1 returns the tab with given id" do
       tab = tab_fixture()
-      assert Hub.get_tab!(tab.id) == tab
+      assert Hub.get_tab!(tab.slug) == tab
     end
   end
 end
