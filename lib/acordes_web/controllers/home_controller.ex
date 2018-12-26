@@ -4,4 +4,8 @@ defmodule AcordesWeb.HomeController do
   def index(conn, _params) do
     render(conn, "index.html")
   end
+
+  def suggestions(conn, %{"input" => input}) do
+    render(conn, "suggestions.json", input: input)
+  end
 end

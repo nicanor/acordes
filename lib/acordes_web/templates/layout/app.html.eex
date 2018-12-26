@@ -60,16 +60,28 @@
   <script type="text/javascript" src="<%= Routes.static_url(@conn, "/js/app.js") %>"></script>
   <script>
   var input = document.getElementById("searchbox");
-  var awesomplete = new Awesomplete(input);
-  awesomplete.list = [
-		{ label: "Flaca, Andres Calamaro", value: "/artistas/andres-calamaro/flaca" },
-		{ label: "Andres Calamaro", value: "/artistas/andres-calamaro" },
-		{ label: "Los aviones, Javier Calamaro", value: "US" }
-	];
+  var awesomplete = new Awesomplete(input, {
+    replace: function(text) { this.input.value = text; },
+    minChars: 3,
+    autoFirst: true
+  });
+
   input.addEventListener("awesomplete-select", function(event) {
     input.text = event.text.label;
-    window.location.href = event.text.value;
+    window.location.href = "/artistas/" + event.text.value;
   });
+
+  input.addEventListener("keyup", function(event) {
+    if (input.value.length < 3) {return;}
+    var code = (event.keyCode || event.which);
+
+    if (code === 37 || code === 38 || code === 39 || code === 40 || code === 27 || code === 13) {return;}
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "/api/suggestions?input=" + input.value, true);
+    ajax.onload = function() { awesomplete.list = JSON.parse(ajax.responseText).suggestions; };
+    ajax.send();
+  });
+
   </script>
 </body>
 </html>
