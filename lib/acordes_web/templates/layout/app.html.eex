@@ -13,17 +13,10 @@
 <body>
   <header class="site-header">
     <section class="brand">Acordes <span class="totales">TOTALES</span></section>
-    <form class="search-form">
-       <input id="searchbox" class="searchbox awesomplete" />
-
-       <script>
-       var input = document.getElementById("searchbox");
-       var awesomplete = new Awesomplete(input);
-       awesomplete.list = ["Ada", "Java", "JavaScript", "Brainfuck", "LOLCODE", "Node.js", "Ruby on Rails"];
-       </script>
-
+    <section class="search-form">
+      <input id="searchbox" class="searchbox awesomplete"/>
       <button class="search-button">Go</button>
-    </form>
+    </section>
   </header>
 
   <nav class="site-nav">
@@ -65,5 +58,18 @@
   </footer>
 
   <script type="text/javascript" src="<%= Routes.static_url(@conn, "/js/app.js") %>"></script>
+  <script>
+  var input = document.getElementById("searchbox");
+  var awesomplete = new Awesomplete(input);
+  awesomplete.list = [
+		{ label: "Flaca, Andres Calamaro", value: "/artistas/andres-calamaro/flaca" },
+		{ label: "Andres Calamaro", value: "/artistas/andres-calamaro" },
+		{ label: "Los aviones, Javier Calamaro", value: "US" }
+	];
+  input.addEventListener("awesomplete-select", function(event) {
+    input.text = event.text.label;
+    window.location.href = event.text.value;
+  });
+  </script>
 </body>
 </html>
