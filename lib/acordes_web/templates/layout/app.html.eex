@@ -14,7 +14,7 @@
   <header class="site-header">
     <section class="brand">Acordes <span class="totales">TOTALES</span></section>
     <section class="search-form">
-      <input id="searchbox" class="searchbox awesomplete"/>
+      <input id="searchbox" class="searchbox awesomplete" autofocus/>
       <button class="search-button">Go</button>
     </section>
   </header>

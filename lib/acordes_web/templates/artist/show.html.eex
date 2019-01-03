@@ -9,10 +9,3 @@
 <% end %>
 <% end %>
 </article>
-
-<hr />
-
-<h2>Bio:</h2>
-<source><%= @artist.bio_source %></source><br />
-
-<%= @artist.bio %>

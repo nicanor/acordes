@@ -3,8 +3,6 @@ defmodule Acordes.Hub.Artist do
   import Ecto.Changeset
 
   schema "artists" do
-    field :bio, :string
-    field :bio_source, :string
     field :name, :string
     field :slug, :string
 
@@ -14,7 +12,7 @@ defmodule Acordes.Hub.Artist do
   @doc false
   def changeset(artist, attrs) do
     artist
-    |> cast(attrs, [:name, :slug, :bio, :bio_source])
+    |> cast(attrs, [:name, :slug])
     |> validate_required([:name, :slug])
   end
 end

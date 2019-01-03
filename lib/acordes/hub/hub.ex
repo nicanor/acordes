@@ -43,6 +43,12 @@ defmodule Acordes.Hub do
     Tab |> where(artist_id: ^artist.id) |> Repo.all()
   end
 
+  def list_tabs(input, limit: limit) do
+    like = "%#{input}%"
+    query = from t in Tab, where: ilike(t.title, ^like), preload: :artist, limit: ^limit
+    Repo.all(query)
+  end
+
   @doc """
   Gets a single tab.
 

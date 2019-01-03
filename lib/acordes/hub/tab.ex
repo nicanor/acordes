@@ -6,7 +6,6 @@ defmodule Acordes.Hub.Tab do
     field :title, :string
     field :slug, :string
     field :content, :string
-    field :source, :string
 
     belongs_to :artist, Acordes.Hub.Artist
 
