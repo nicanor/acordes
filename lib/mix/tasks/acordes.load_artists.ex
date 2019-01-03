@@ -9,9 +9,12 @@ defmodule Mix.Tasks.Acordes.LoadArtists do
 
   def run(_args) do
     Mix.Task.run("app.start")
-    Mix.shell.info("Now I'll load all artists from acordestotales.com and save in the database!")
 
-    HTTPoison.start
+    Mix.shell().info(
+      "Now I'll load all artists from acordestotales.com and save in the database!"
+    )
+
+    HTTPoison.start()
     {:ok, response} = HTTPoison.get("http://acordestotales.com/api/artists")
     {:ok, body} = Jason.decode(response.body)
 

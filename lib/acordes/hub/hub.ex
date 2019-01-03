@@ -51,11 +51,11 @@ defmodule Acordes.Hub do
   def get_tab!(id), do: Repo.get_by!(Tab, slug: id)
 
   def get_tab!(artist, slug) do
-     Repo.get_by!(Tab, artist_id: artist.id, slug: slug)
+    Repo.get_by!(Tab, artist_id: artist.id, slug: slug)
   end
 
   def get_tab(artist_id, slug) do
-     Repo.get_by(Tab, artist_id: artist_id, slug: slug)
+    Repo.get_by(Tab, artist_id: artist_id, slug: slug)
   end
 
   @doc """

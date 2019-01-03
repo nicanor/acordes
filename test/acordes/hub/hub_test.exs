@@ -4,7 +4,12 @@ defmodule Acordes.HubTest do
   alias Acordes.Hub
 
   describe "artists" do
-    @valid_attrs %{bio: "some bio", bio_source: "some bio_source", name: "some name", slug: "some slug"}
+    @valid_attrs %{
+      bio: "some bio",
+      bio_source: "some bio_source",
+      name: "some name",
+      slug: "some slug"
+    }
 
     def artist_fixture(attrs \\ %{}) do
       {:ok, artist} =
@@ -27,7 +32,13 @@ defmodule Acordes.HubTest do
   end
 
   describe "tabs" do
-    @valid_attrs %{content: "some content", slug: "some slug", source: "some source", title: "some title", artist_id: nil}
+    @valid_attrs %{
+      content: "some content",
+      slug: "some slug",
+      source: "some source",
+      title: "some title",
+      artist_id: nil
+    }
 
     def tab_fixture do
       artist = artist_fixture()
