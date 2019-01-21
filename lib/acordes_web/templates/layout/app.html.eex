@@ -23,11 +23,6 @@
     <a class="nav-link" href="/">Home</a>
     <%= link "Artistas", to: Routes.artist_path(@conn, :index), class: "nav-link" %>
 
-    <header class="header">Tablaturas populares</header>
-    <a class="nav-link" href="/">Home</a>
-    <a class="nav-link" href="/">Home</a>
-    <a class="nav-link" href="/">Home</a>
-
     <header class="header">Artistas populares</header>
     <a class="nav-link" href="/">Home</a>
     <a class="nav-link" href="/">Home</a>
@@ -49,7 +44,6 @@
       </p>
     <% end %>
 
-
     <%= render @view_module, @view_template, assigns %>
   </main>
 
@@ -59,9 +53,28 @@
 
   <script type="text/javascript" src="<%= Routes.static_url(@conn, "/js/app.js") %>"></script>
   <script>
+
+//  filter_unaccented = function (text, input) {
+//    return RegExp(input.trim().replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&").normalize("NFD").replace(/[\u0300-\u036f]/g, ""), "i").test(text.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+//  };
+///
   var input = document.getElementById("searchbox");
+
+  function all_match(words, input) {
+    for (let word of words) {
+      if(!Awesomplete.FILTER_CONTAINS(input, word)) {
+        return false;
+      }
+    }
+    return true;
+  }
+//  initialize_searchbox(input);
   var awesomplete = new Awesomplete(input, {
     replace: function(text) { this.input.value = text; },
+    filter: function(text, input) {
+      var words = input.split(" ");
+		  return all_match(words, text); //Awesomplete.FILTER_CONTAINS(text, word);
+	  },
     minChars: 3,
     autoFirst: true
   });

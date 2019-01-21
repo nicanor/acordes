@@ -6,6 +6,7 @@ defmodule AcordesWeb.HomeController do
   end
 
   def suggestions(conn, %{"input" => input}) do
-    render(conn, "suggestions.json", input: input)
+    suggestions = Acordes.Hub.FuzzyFilter.get(input)
+    render(conn, "suggestions.json", suggestions: suggestions)
   end
 end
