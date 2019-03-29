@@ -1,3 +1,4 @@
+.site-brand  { grid-area: brand; }
 .site-header { grid-area: header; }
 .site-nav    { grid-area: nav; }
 .site-main   { grid-area: main; }
@@ -13,21 +14,22 @@ body {
 
   display: grid;
   grid-template-areas:
-    'header header'
-    'nav    main  '
+    'brand  header'
+    'nav    main'
     'footer footer';
   grid-template-rows: 8rem 1fr 4rem;
-  grid-template-columns: 32rem 1fr;
+  grid-template-columns: 28rem 1fr;
 }
 
 @media screen and (max-width: $small-break) {
   body {
     grid-template-areas:
+      'brand'
       'header'
       'main'
       'nav'
       'footer';
-    grid-template-rows: 8rem 1fr 1fr 4rem;
+    grid-template-rows: 8rem 8rem 1fr 4rem;
     grid-template-columns: 1fr;
   }
 }

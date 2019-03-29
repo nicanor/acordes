@@ -1,20 +1,22 @@
 .site-header {
   padding: 1rem 3rem;
 
+  background-color: $clouds;
+
   z-index: 1;
   box-shadow: 1px 3px 2px -2px rgba(0,0,0,0.3);
+
+  margin-left: -2px;
+  margin-right: -2px;
 
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
 
-  .brand {
-    width: 32rem;
-    padding: 1rem;
-    font-size: 2.5rem;
-
-    .totales {
-      color: $carrot;
-    }
+@media screen and (max-width: $small-break) {
+  .site-header {
+    justify-content: center;
+    padding-bottom: 4rem;
   }
 }

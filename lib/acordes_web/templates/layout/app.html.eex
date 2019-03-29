@@ -11,13 +11,16 @@
   <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-brand">
     <section class="brand">Acordes <span class="totales">TOTALES</span></section>
+  </header>
+  
+  <article class="site-header">
     <section class="search-form">
       <input id="searchbox" class="searchbox awesomplete" autofocus/>
       <button class="search-button">Go</button>
     </section>
-  </header>
+  </article>
 
   <nav class="site-nav">
     <a class="nav-link" href="/">Home</a>
