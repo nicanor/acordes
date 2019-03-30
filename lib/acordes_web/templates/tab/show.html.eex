@@ -3,4 +3,4 @@
   <h1><%= @tab.title %></h1>
 </header>
 
-<pre class="tab-content"><%= @tab.content %></pre>
+<pre class="tab-content"><%= raw beautiful_content(@tab.content) %></pre>
