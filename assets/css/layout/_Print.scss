@@ -1,0 +1,17 @@
+@media print {
+    body {
+      grid-template-areas:
+        'brand'
+        'header'
+        'main'
+        'nav'
+        'footer';
+      grid-template-rows: 0rem 0rem 1fr 0rem 0rem;
+      grid-template-columns: 1fr;
+    }
+
+  .site-header { display: none; }
+  .site-brand { display: none; }
+  .site-nav    { display: none; }
+  .site-footer { display: none; }
+}

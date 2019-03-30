@@ -2,6 +2,6 @@
 
 <article class="artist-list">
 <%= for artist <- @artists do %>
-  <%= link artist.name, to: Routes.artist_path(@conn, :show, artist) %>
+<%= link artist.name, to: Routes.artist_path(@conn, :show, artist) %>
 <% end %>
 </article>

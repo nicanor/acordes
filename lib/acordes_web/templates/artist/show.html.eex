@@ -3,9 +3,9 @@
 <article class="tab-list">
 <%= for x <- 1..5 do %>
 <%= for tab <- @tabs do %>
-  <%= link to: "#{@artist.slug}/#{tab.slug}" do %>
-    <%= tab.title %> <span class="star-ranking r5"></span>
-  <% end %>
+<%= link to: "#{@artist.slug}/#{tab.slug}" do %>
+<%= tab.title %> <span class="star-ranking r5"></span>
+<% end %>
 <% end %>
 <% end %>
 </article>
