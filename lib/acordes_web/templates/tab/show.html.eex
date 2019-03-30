@@ -1,6 +1,6 @@
-<h1>
-  <%= @tab.title %>
-  <small><%= link @artist.name, to: Routes.artist_path(@conn, :show, @artist), class: "artist-name" %></small>
-</h1>
+<header class="tab-header">
+  <%= link @artist.name, to: Routes.artist_path(@conn, :show, @artist), class: "artist-name" %>
+  <h1><%= @tab.title %></h1>
+</header>
 
 <pre class="tab-content"><%= @tab.content %></pre>
