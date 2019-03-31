@@ -17,12 +17,27 @@ defmodule AcordesWeb.TabView do
 
   defp beautify_if_chords_line(line) do
     case is_chord_line?(line) do
-      true -> String.replace(line, @chord_regex, "<span class=\"chord\">\\0</span>")
+      true -> Regex.replace(@chord_regex, line, &replace_function/2)
       _ -> line
     end
   end
 
   defp is_chord_line?(line) do
     String.match?(line, @chord_line_regex)
+  end
+
+  defp replace_function(_, chord) do
+    "<span class=\"chord\" tooltip=\"#{tooltip(chord)}\">#{chord}</span>"
+  end
+
+  defp tooltip(_chord) do
+    """
+    E • ┬───┬───┬───┬──
+    B • ┼─•─┼───┼───┼──
+    G • ┼───┼───┼───┼──
+    D • ┼───┼─•─┼───┼──
+    A • ┼───┼───┼─•─┼──
+    E x ┴───┴───┴───┴──
+    """
   end
 end

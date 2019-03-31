@@ -16,3 +16,7 @@
     }
   }
 }
+
+@media screen and (max-width: $small-break) {
+  .site-nav { display: none; }
+}

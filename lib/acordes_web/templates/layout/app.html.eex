@@ -14,22 +14,19 @@
   <header class="site-brand">
     <section class="brand">Acordes <span class="totales">TOTALES</span></section>
   </header>
-  
+
   <article class="site-header">
     <section class="search-form">
       <input id="searchbox" class="searchbox awesomplete" autofocus/>
-      <button class="search-button">Go</button>
+      <button class="search-button">Buscar acordes</button>
     </section>
   </article>
 
   <nav class="site-nav">
-    <a class="nav-link" href="/">Home</a>
-    <%= link "Artistas", to: Routes.artist_path(@conn, :index), class: "nav-link" %>
-
-    <header class="header">Artistas populares</header>
-    <a class="nav-link" href="/">Home</a>
-    <a class="nav-link" href="/">Home</a>
-    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/">Inicio</a>
+    <%= link "Artistas populares", to: Routes.artist_path(@conn, :index), class: "header" %>
+    <a class="nav-link" href="/">Andres Calamaro</a>
+    <a class="nav-link" href="/">Fabiana Cantillo</a>
   </nav>
 
   <main class="site-main">

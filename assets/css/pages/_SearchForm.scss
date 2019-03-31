@@ -1,5 +1,6 @@
 .search-form {
   margin-bottom: 0px;
+  text-align: center;
 
   .search-button {
     line-height: 3rem;
@@ -15,6 +16,12 @@
 
     line-height: 3rem;
     margin-bottom: 0px;
-    width: 30rem;
+    width: 24rem;
+  }
+}
+
+@media screen and (max-width: $small-break) {
+  .search-form .searchbox {
+    margin-bottom: 0.5rem;
   }
 }
