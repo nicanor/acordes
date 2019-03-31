@@ -1,4 +1,6 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Acordes Totales" %></h1>
-  <p>Encuentra los mejores acordes y tablaturas para guitarra, bajo, piano, armónica y otros instrumentos</p>
+  <h1>Acordes <span class="totales">Totales</span></h1>
+  <p>En este sitio podrás encontrar acordes y tablaturas para guitarra y otros instrumentos musicales.</p>
+  <h2>¿Cómo encontrar acordes?</h2>
+  <p>Escribe el nombre del artista o la canción en el buscador ubicado encima del sitio web, o has click en el nombre de tu artista en la columna ubicada a la izquierda.</p>
 </section>

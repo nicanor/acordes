@@ -12,7 +12,7 @@
 </head>
 <body>
   <header class="site-brand">
-    <section class="brand">Acordes <span class="totales">TOTALES</span></section>
+    <section class="brand">Acordes <span class="totales">Totales</span></section>
   </header>
 
   <article class="site-header">
@@ -25,8 +25,8 @@
   <nav class="site-nav">
     <a class="nav-link" href="/">Inicio</a>
     <%= link "Artistas populares", to: Routes.artist_path(@conn, :index), class: "header" %>
-    <a class="nav-link" href="/">Andres Calamaro</a>
-    <a class="nav-link" href="/">Fabiana Cantillo</a>
+    <a class="nav-link" href="/artistas/andres-calamaro">Andres Calamaro</a>
+    <a class="nav-link" href="/artistas/fabiana-cantilo">Fabiana Cantilo</a>
   </nav>
 
   <main class="site-main">
