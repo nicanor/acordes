@@ -1,11 +1,10 @@
 defmodule Acordes.Hub.FuzzyFilter do
-
-  @file_path 'priv/repo/search_terms.txt'
+  @file_path Path.join(File.cwd!(), "priv/repo/search_terms.txt")
 
   def get(term) do
     "cat #{@file_path} | fzf --filter=\"#{term}\""
-    |> String.to_charlist
-    |> :os.cmd
+    |> String.to_charlist()
+    |> :os.cmd()
     |> List.to_string()
     |> String.split("\n", trim: true)
     |> Stream.take(200)
