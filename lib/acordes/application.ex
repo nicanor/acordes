@@ -11,8 +11,9 @@ defmodule Acordes.Application do
       # Start the Ecto repository
       Acordes.Repo,
       # Start the endpoint when the application starts
-      AcordesWeb.Endpoint
+      AcordesWeb.Endpoint,
       # Starts a worker by calling: Acordes.Worker.start_link(arg)
+      Acordes.Hub.ArtistsCache
       # {Acordes.Worker, arg},
     ]
 
