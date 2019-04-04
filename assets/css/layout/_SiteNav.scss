@@ -6,11 +6,14 @@
 
   .header {
     padding: 1rem;
-    color: $carrot;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $gold;
   }
 
   .nav-link {
     padding: 0.5rem 1rem;
+    color: $text-color;
     &:hover {
       background-color: rgba(200, 200, 200, 0.2);
     }
