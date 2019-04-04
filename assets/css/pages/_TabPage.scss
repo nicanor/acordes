@@ -1,0 +1,24 @@
+.tab-header {
+  h1 {
+    margin-bottom: 0;
+  }
+  padding-bottom: 1rem;
+}
+
+@media screen and (max-width: $small-break) {
+  .tab-header {
+    text-align: center;
+  }
+}
+
+.artist-name {
+  font-size: 2rem;
+  color: $river;
+}
+
+.tab-content {
+  font-size: 0.8em;
+  span.chord {
+    color: $river;
+  }
+}

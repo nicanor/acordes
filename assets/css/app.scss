@@ -19,7 +19,7 @@
 //@import "./component/_Image.scss";
 
 // Layouts
-@import "./layout/_Admin.scss";
+@import "./layout/_Layout.scss";
 @import "./layout/_SiteBrand.scss";
 @import "./layout/_SiteHeader.scss";
 @import "./layout/_SiteNav.scss";
@@ -28,8 +28,9 @@
 @import "./layout/_Print.scss";
 
 // Pages
-@import "./pages/_SearchForm.scss";
 @import "./pages/_General.scss";
+@import "./pages/_SearchForm.scss";
+@import "./pages/_TabPage.scss";
 @import "./pages/_StarRanking.scss";
 @import "./pages/_Tooltip.scss";
 
