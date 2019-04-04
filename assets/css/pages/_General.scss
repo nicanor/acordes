@@ -9,7 +9,7 @@
 
     margin-left: -1rem;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid $pale-color;
+    border-bottom: 1px solid $clouds;
 
     display: flex;
     justify-content: space-between;
@@ -17,5 +17,15 @@
     &:hover {
       background-color: rgba(200, 200, 200, 0.2);
     }
+  }
+}
+
+.home {
+  font-size: 1.8rem;
+  max-width: 60rem;
+  h2 {
+    color: $gold;
+    text-transform: uppercase;
+    font-weight: 400;
   }
 }

@@ -12,7 +12,9 @@
 </head>
 <body>
   <header class="site-brand">
-    <section class="brand">Acordes <span class="totales">Totales</span></section>
+    <section class="brand">
+      <a href="/">Acordes<span class="totales">Totales</span></a>
+    </section>
   </header>
 
   <article class="site-header">
