@@ -51,7 +51,7 @@
   </main>
 
   <footer class="site-footer">
-    <a class="nav-link" href="/docs">Docs</a>
+    Creado por <a class="nav-link" href="http://nicanor.github.io" target="_blank">Nicanor Perera</a>
   </footer>
 
   <script type="text/javascript" src="<%= Routes.static_url(@conn, "/js/app.js") %>"></script>

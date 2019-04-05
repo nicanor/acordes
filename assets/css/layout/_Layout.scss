@@ -15,7 +15,7 @@ body {
     'brand  header'
     'nav    main'
     'footer footer';
-  grid-template-rows: 8rem 1fr 4rem;
+  grid-template-rows: 8rem 1fr 6rem;
   grid-template-columns: 28rem 1fr;
 }
 
@@ -27,7 +27,7 @@ body {
       'main'
       'nav'
       'footer';
-    grid-template-rows: 8rem 8rem 1fr 1rem 4rem;
+    grid-template-rows: 8rem 8rem 1fr 1rem 6rem;
     grid-template-columns: 1fr;
   }
 }
