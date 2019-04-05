@@ -40,7 +40,7 @@ defmodule Acordes.Hub do
   end
 
   def list_tabs(artist) do
-    Tab |> where(artist_id: ^artist.id) |> Repo.all()
+    Tab |> where(artist_id: ^artist.id) |> order_by(:title) |> Repo.all()
   end
 
   def list_tabs(input, limit: limit) do
