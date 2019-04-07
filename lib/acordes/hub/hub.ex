@@ -2,11 +2,10 @@ defmodule Acordes.Hub do
   @moduledoc """
   The Hub context.
   """
-
   import Ecto.Query, warn: false
   alias Acordes.Repo
-
   alias Acordes.Hub.Artist
+  alias Acordes.Hub.Tab
 
   @doc """
   Returns the list of artists.
@@ -20,17 +19,6 @@ defmodule Acordes.Hub do
   Raises `Ecto.NoResultsError` if the Artist does not exist.
   """
   def get_artist!(slug), do: Repo.get_by!(Artist, slug: slug)
-
-  @doc """
-  Creates an artist.
-  """
-  def create_artist(attrs \\ %{}) do
-    %Artist{}
-    |> Artist.changeset(attrs)
-    |> Repo.insert()
-  end
-
-  alias Acordes.Hub.Tab
 
   @doc """
   Returns the list of tabs.
@@ -65,16 +53,16 @@ defmodule Acordes.Hub do
   end
 
   @doc """
+  Creates an artist.
+  """
+  def create_artist(attrs \\ %{}) do
+    %Artist{}
+    |> Artist.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
   Creates a tab.
-
-  ## Examples
-
-      iex> create_tab(%{field: value})
-      {:ok, %Tab{}}
-
-      iex> create_tab(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
   """
   def create_tab(attrs \\ %{}) do
     %Tab{}
