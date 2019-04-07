@@ -6,6 +6,8 @@ defmodule Acordes.Hub.Artist do
     field :name, :string
     field :slug, :string
 
+    has_many :tabs, Acordes.Hub.Tab
+
     timestamps()
   end
 

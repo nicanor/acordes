@@ -2,7 +2,6 @@ defmodule AcordesWeb.ArtistController do
   use AcordesWeb, :controller
 
   alias Acordes.Hub
-  alias Acordes.Hub.Artist
 
   def index(conn, _params) do
     artists = Hub.list_artists()
