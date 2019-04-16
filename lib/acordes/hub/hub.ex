@@ -24,7 +24,8 @@ defmodule Acordes.Hub do
   Returns the list of tabs.
   """
   def list_tabs do
-    Repo.all(Tab)
+    query = from t in Tab, preload: :artist
+    Repo.all(query)
   end
 
   def list_tabs(artist) do

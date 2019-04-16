@@ -13,7 +13,8 @@ defmodule Acordes.Application do
       # Start the endpoint when the application starts
       AcordesWeb.Endpoint,
       # Starts a worker by calling: Acordes.Worker.start_link(arg)
-      Acordes.Hub.ArtistsCache
+      Acordes.Hub.ArtistsCache,
+      Acordes.Hub.SuggestionsCache
       # {Acordes.Worker, arg},
     ]
 
