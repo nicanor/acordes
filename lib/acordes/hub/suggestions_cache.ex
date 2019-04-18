@@ -26,13 +26,19 @@ defmodule Acordes.Hub.SuggestionsCache do
   end
 
   def init(_args) do
+    artists =
+      Hub.list_artists()
+      |> Enum.map(fn %{name: name, slug: slug} ->
+        {normalize(name), [name, slug]}
+      end)
+
     tabs =
       Hub.list_tabs()
       |> Enum.map(fn %{title: title, slug: tab_slug, artist: %{name: name, slug: artist_slug}} ->
         {normalize("#{title} #{name}"), ["#{title}, #{name}", "#{artist_slug}/#{tab_slug}"]}
       end)
 
-    {:ok, tabs}
+    {:ok, artists ++ tabs}
   end
 
   defp normalize(complete_name) do
