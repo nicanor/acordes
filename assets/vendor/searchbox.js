@@ -1,11 +1,18 @@
+unaccented = function(text) {
+  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 filter_unaccented = function (text, input) {
-  return RegExp(input.trim().replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&").normalize("NFD").replace(/[\u0300-\u036f]/g, ""), "i").test(text.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+  return RegExp(input, "i").test(unaccented(text));
 };
 
 function initialize_searchbox(input) {
   var awesomplete = new Awesomplete(input, {
     replace: function(text) { this.input.value = text; },
     filter: filter_unaccented,
+    data: function (text, input) {
+      return unaccented(text);
+    },
     minChars: 3,
     autoFirst: true
   });

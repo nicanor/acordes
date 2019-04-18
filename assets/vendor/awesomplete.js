@@ -365,12 +365,12 @@ _.CONTAINER = function (input) {
 	});
 }
 
-_.ITEM = function (text, input, item_id) {
-	var html = input.trim() === "" ? text : text.replace(RegExp($.regExpEscape(input.trim()), "gi"), "<mark>$&</mark>");
-	return $.create("li", {
-		innerHTML: html,
-		"aria-selected": "false",
-        "id": "awesomplete_list_" + this.count + "_item_" + item_id
+_.ITEM = function (label, input, item_id) {
+//	var html = input.trim() === "" ? text : text.replace(RegExp($.regExpEscape(input.trim()), "gi"), "<mark>$&</mark>");
+  return $.create("li", {
+    innerHTML: label,
+    "aria-selected": "false",
+    "id": "awesomplete_list_" + this.count + "_item_" + item_id
 	});
 };
 

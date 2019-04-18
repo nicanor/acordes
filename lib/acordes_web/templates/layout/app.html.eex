@@ -57,27 +57,41 @@
   <script type="text/javascript" src="<%= Routes.static_url(@conn, "/js/app.js") %>"></script>
   <script>
 
-//  filter_unaccented = function (text, input) {
-//    return RegExp(input.trim().replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&").normalize("NFD").replace(/[\u0300-\u036f]/g, ""), "i").test(text.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
-//  };
-///
   var input = document.getElementById("searchbox");
 
-  function all_match(words, input) {
-    for (let word of words) {
-      if(!Awesomplete.FILTER_CONTAINS(input, word)) {
-        return false;
-      }
-    }
-    return true;
+  unaccented = function(text) {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
-//  initialize_searchbox(input);
+
+  filter_unaccented = function (text, input) {
+    return RegExp(unaccented(input), "i").test(unaccented(text));
+  };
+
+  highlight = function(text, input) {
+    var label = text.label;
+    if ( input.trim() === "" ) {
+      return label;
+    }
+    aMatch = RegExp(unaccented(input).trim(), "gi").exec(unaccented(label));
+
+    if ( aMatch !== null ) {
+      var start = aMatch.index;
+      var end = aMatch.index + input.length;
+      return label.slice(0, start) + "<mark>" + label.slice(start, end) + "</mark>" + label.slice(end);
+    }
+    return label.replace(RegExp(input.trim(), "gi"), "<mark>$&</mark>");
+  }
+
+  my_item = function (text, input, item_id) {
+    label = highlight(text, input);
+    return Awesomplete.ITEM(label, input);
+  };
+
+  //  initialize_searchbox(input);
   var awesomplete = new Awesomplete(input, {
     replace: function(text) { this.input.value = text; },
-    filter: function(text, input) {
-      var words = input.split(" ");
-		  return all_match(words, text); //Awesomplete.FILTER_CONTAINS(text, word);
-	  },
+    filter: filter_unaccented,
+    item: my_item,
     minChars: 3,
     autoFirst: true
   });
