@@ -63,9 +63,7 @@
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
 
-  filter_unaccented = function (text, input) {
-    return RegExp(unaccented(input), "i").test(unaccented(text));
-  };
+  all = function(text, input) { return true;};
 
   highlight = function(text, input) {
     var label = text.label;
@@ -90,7 +88,7 @@
   //  initialize_searchbox(input);
   var awesomplete = new Awesomplete(input, {
     replace: function(text) { this.input.value = text; },
-    filter: filter_unaccented,
+    filter: all,
     item: my_item,
     minChars: 3,
     autoFirst: true
